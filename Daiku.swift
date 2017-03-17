@@ -18,86 +18,91 @@ public class DaikuComponent {
     
     init() {    }
     
-    static func viewcontroller(_ c: UIViewController.Type) -> DaikuComponent {
+    static func viewcontroller(_ instance: UIViewController) -> DaikuComponent {
         return DaikuComponent()
     }
     
     static func tabbar(components: [DaikuComponent],
-                       `class` c: UITabBarController.Type = UITabBarController.self) -> DaikuComponent {
+                       instance: UITabBarController = UITabBarController() ) -> DaikuComponent {
         return DaikuComponent()
     }
     
     static func navigation(root: DaikuComponent,
-                           `class` c: UINavigationController.Type = UINavigationController.self) -> DaikuComponent {
+                           instance: UINavigationController = UINavigationController() ) -> DaikuComponent {
         return DaikuComponent()
     }
     
     static func page(controllers: [DaikuComponent],
-                     `class` c: UIPageViewController.Type = UIPageViewController.self) -> DaikuComponent {
+                     instance: UIPageViewController = UIPageViewController() ) -> DaikuComponent {
         return DaikuComponent()
     }
     
     func make() -> UIViewController {
-        return UIViewController()
+        fatalError("cannot call")
     }
 }
 
 private class ACTabBar: DaikuComponent {
-    var components: [DaikuComponent]
+    let components: [DaikuComponent]
+    let instance: UITabBarController
     
-    init(components: [DaikuComponent]) {
+    init(components: [DaikuComponent], instance: UITabBarController) {
         self.components = components
+        self.instance = instance
     }
     
     override func make() -> UIViewController {
-        let tabbar = UITabBarController()
-        self.components.map { (ac) -> UIViewController in
+        let vcs = self.components.map { (ac) -> UIViewController in
             return ac.make()
         }
-        return tabbar
+        
+        instance.viewControllers = vcs
+        
+        return instance
     }
 }
 
 private class ACVC: DaikuComponent {
     
-    var controller: UIViewController
+    var instance: UIViewController
     
-    init(`class` c: UIViewController.Type) {
-        self.controller = UIViewController()
+    init(instance: UIViewController) {
+        self.instance = instance
     }
     
     override func make() -> UIViewController {
-        return self.controller
+        return self.instance
     }
 }
 
 private class ACNav: DaikuComponent {
     
-    var subComponent: DaikuComponent
+    let subComponent: DaikuComponent
+    let instance: UINavigationController
     
-    init(subComponent: DaikuComponent) {
+    init(subComponent: DaikuComponent, instance: UINavigationController) {
         self.subComponent = subComponent
+        self.instance = instance
     }
     
     override func make() -> UIViewController {
-        let nav = UINavigationController()
         let vc = self.subComponent.make()
-        nav.viewControllers = [vc]
-        return nav
+        self.instance.viewControllers = [vc]
+        return instance
     }
 }
 
 private class ACPag: DaikuComponent {
     
-    var components: [DaikuComponent]
+    let components: [DaikuComponent]
+    let instance: UIPageViewController
     
-    init(components: [DaikuComponent]) {
+    init(components: [DaikuComponent], instance: UIPageViewController) {
         self.components = components
+        self.instance = instance
     }
     
     override func make() -> UIViewController {
-        let page = UIPageViewController()
-        
-        return page
+        return self.instance
     }
 }
