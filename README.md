@@ -25,7 +25,7 @@ func navigation(root: DaikuComponent, instance: UINavigationController) -> Daiku
 
 Let's say we have a few app layouts. 1 for Admin users and 1 for a Base user. We decide that we want to roll out a new dashboard feature to some of our base users. That give us 3 potential layouts.
 
-// IMAGE
+![GitHub Logo](/assets/layouts.png)
 
 We can build each of these layouts
 
