@@ -21,13 +21,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let window = UIWindow(frame: UIScreen.main.bounds)
         window.makeKeyAndVisible()
         
-        let random = Int(arc4random_uniform(3))
+        let random = Int(arc4random_uniform(2))
         
         let code: String = {
             switch random {
             case 0: return "one"
-            case 1: return "two"
-            default: return "beta"
+            default: return "two"
             }
         }()
         
