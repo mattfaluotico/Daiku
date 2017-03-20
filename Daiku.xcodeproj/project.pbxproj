@@ -20,6 +20,8 @@
 		AC1A012E1E7DA94C0083F929 /* DCNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1A012D1E7DA94C0083F929 /* DCNavigationController.swift */; };
 		AC1A01301E7DA9690083F929 /* DCPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1A012F1E7DA9690083F929 /* DCPage.swift */; };
 		AC1A01321E7DAFAA0083F929 /* AppStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1A01311E7DAFAA0083F929 /* AppStructures.swift */; };
+		AC1A01341E7DE81E0083F929 /* DaikuManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1A01331E7DE81E0083F929 /* DaikuManager.swift */; };
+		AC1A01371E7DEB480083F929 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1A01361E7DEB480083F929 /* TabBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,8 @@
 		AC1A012D1E7DA94C0083F929 /* DCNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DCNavigationController.swift; sourceTree = "<group>"; };
 		AC1A012F1E7DA9690083F929 /* DCPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DCPage.swift; sourceTree = "<group>"; };
 		AC1A01311E7DAFAA0083F929 /* AppStructures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStructures.swift; sourceTree = "<group>"; };
+		AC1A01331E7DE81E0083F929 /* DaikuManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaikuManager.swift; sourceTree = "<group>"; };
+		AC1A01361E7DEB480083F929 /* TabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,8 +87,8 @@
 			children = (
 				AC1A01281E7DA8A60083F929 /* Components */,
 				AC1A01231E7DA4D30083F929 /* Daiku.swift */,
-				AC1A01031E7DA4690083F929 /* Daiku.h */,
-				AC1A01041E7DA4690083F929 /* Info.plist */,
+				AC1A01331E7DE81E0083F929 /* DaikuManager.swift */,
+				AC1A01351E7DE8290083F929 /* Support */,
 			);
 			path = Daiku;
 			sourceTree = "<group>";
@@ -98,6 +102,7 @@
 				AC1A01181E7DA47D0083F929 /* Assets.xcassets */,
 				AC1A011A1E7DA47D0083F929 /* LaunchScreen.storyboard */,
 				AC1A011D1E7DA47D0083F929 /* Info.plist */,
+				AC1A01361E7DEB480083F929 /* TabBar.swift */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -112,6 +117,15 @@
 				AC1A012F1E7DA9690083F929 /* DCPage.swift */,
 			);
 			name = Components;
+			sourceTree = "<group>";
+		};
+		AC1A01351E7DE8290083F929 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				AC1A01031E7DA4690083F929 /* Daiku.h */,
+				AC1A01041E7DA4690083F929 /* Info.plist */,
+			);
+			name = Support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +247,7 @@
 				AC1A01271E7DA6050083F929 /* DaikuComponent.swift in Sources */,
 				AC1A012E1E7DA94C0083F929 /* DCNavigationController.swift in Sources */,
 				AC1A01301E7DA9690083F929 /* DCPage.swift in Sources */,
+				AC1A01341E7DE81E0083F929 /* DaikuManager.swift in Sources */,
 				AC1A01241E7DA4D30083F929 /* Daiku.swift in Sources */,
 				AC1A012C1E7DA92B0083F929 /* DCViewController.swift in Sources */,
 			);
@@ -243,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC1A01141E7DA47D0083F929 /* ViewController.swift in Sources */,
+				AC1A01371E7DEB480083F929 /* TabBar.swift in Sources */,
 				AC1A01321E7DAFAA0083F929 /* AppStructures.swift in Sources */,
 				AC1A01121E7DA47D0083F929 /* AppDelegate.swift in Sources */,
 			);

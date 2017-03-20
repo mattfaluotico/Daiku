@@ -21,7 +21,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let window = UIWindow(frame: UIScreen.main.bounds)
         window.makeKeyAndVisible()
         
-        window.rootViewController = myAppStructure["admin"].make()
+        let random = Int(arc4random_uniform(3))
+        
+        let code: String = {
+            switch random {
+            case 0: return "one"
+            case 1: return "two"
+            default: return "beta"
+            }
+        }()
+        
+        window.rootViewController = myAppStructure[code].make()
         
         self.window = window
                 
